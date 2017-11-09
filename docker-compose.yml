@@ -5,7 +5,7 @@ volumes:
 
 services:
   consul-agent:
-    image: progrium/consul:latest
+    image: consul:latest
     ports:
       -  8500
       -  8300
