@@ -5,7 +5,6 @@ volumes:
 
 services:
   consul-agent:
-    command:  -join 35.157.178.106  -advertise 35.198.86.51
     image: progrium/consul:latest
     ports:
       -  8500
