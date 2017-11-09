@@ -6,7 +6,7 @@ volumes:
 services:
   consul:
     command: -join 35.157.178.106  -advertise  35.198.86.51
-    image: progrium/consul:latest
+    image: consul:latest
     ports:
       - 8500
       - 8300
@@ -35,9 +35,9 @@ services:
       - -data-dir=  /data
       #- -encrypt=<consul_encryption_key>
       #- -datacenter=<datacenter_name>
-      - -retry-join=  35.157.178.106
-    #volumes:
-    #  -  data: "/etc/data"
+      #- -retry-join=  35.157.178.106
+    depends_on:
+      - consul
     restart: always
 
   consul_notifier:
