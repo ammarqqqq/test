@@ -2,7 +2,7 @@ version: '2'
 
 services:
   consul:
-    command:  -join 35.157.178.106  -advertise 35.195.204.22
+    command:  -join 35.157.178.106  -advertise 35.198.86.51  
     image: progrium/consul:latest
     ports:
       - "8500:8500"
@@ -15,7 +15,7 @@ services:
 
 
   registrator:
-    command:  -ip=35.195.204.22  consul://35.157.178.106:8500
+    command:  -ip= 35.198.86.51   consul://35.157.178.106:8500
     image: gliderlabs/registrator:latest
     links:
       - consul
