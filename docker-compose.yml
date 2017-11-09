@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  consul:
+  consul-agent:
     command:  -join 35.157.178.106  -advertise 35.198.86.51  
     image: progrium/consul:latest
     ports:
@@ -18,9 +18,9 @@ services:
     command:  -ip= 35.198.86.51   consul://35.157.178.106:8500
     image: gliderlabs/registrator:latest
     links:
-      - consul
+      - consul-agent
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock"
     restart: always
     depends_on:
-      - consul
+      - consul-agent
