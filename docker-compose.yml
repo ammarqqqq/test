@@ -22,8 +22,8 @@ services:
       #- -encrypt=<consul_encryption_key>
       #- -datacenter=<datacenter_name>
       - -retry-join=  35.157.178.106
-    volumes:
-      - "data: /etc/data"
+    #volumes:
+    #  -  data: "/etc/data"
     restart: always
 
   consul_notifier:
