@@ -23,7 +23,7 @@ services:
       #- -datacenter=<datacenter_name>
       - -retry-join=  35.157.178.106
     volumes:
-      - data: /data
+      - "data: /data"
     restart: always
 
   consul_notifier:
