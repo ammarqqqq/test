@@ -5,7 +5,8 @@ volumes:
 
 services:
   consul:
-    command: -agent  -join 35.157.178.106  -advertise  35.198.86.51
+    #command: -agent  -join 35.157.178.106  -advertise  35.198.86.51
+    command: -agent  -join 35.157.178.106 
     image: consul:latest
     ports:
       - 8500
