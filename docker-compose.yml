@@ -17,7 +17,6 @@ services:
       - consul
       - agent
       - -node=  "bankinstance5-worker"
-      - -advertise= 35.198.86.51
       - -data-dir=  /data
       #- -encrypt=<consul_encryption_key>
       #- -datacenter=<datacenter_name>
