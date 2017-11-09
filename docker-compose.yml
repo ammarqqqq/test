@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  consul:
+    command:  -join 35.157.178.106  -advertise 35.195.204.22
+    image: progrium/consul:latest
+    ports:
+      - "8500:8500"
+      - "8300:8300"
+      - "8400:8400"
+      - "8301:8301"
+      #- "8301/udp:8301/udp"
+      #- "8302/udp:8302/udp"
+    restart: always
+
+
+  registrator:
+    command:  -ip=35.195.204.22  consul://35.157.178.106:8500
+    image: gliderlabs/registrator:latest
+    links:
+      - consul
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock"
+    restart: always
+    depends_on:
+      - consul
